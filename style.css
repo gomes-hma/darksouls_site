@@ -1,0 +1,81 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #171717;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  padding: 30px;
+  min-height: 100vh;
+  margin: 0;
+  color: white;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Escurece a imagem de fundo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: -1;
+  pointer-events: none;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.personagens {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: 200px;
+  background: #252525;
+  border-radius: 12px;
+  padding-bottom: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #999;
+}
+
+.card.selecionado {
+  border-color: #c9a227;
+  box-shadow: 0 0 15px rgba(201, 162, 39, 0.5);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin: 15px 5px 0;
+}
+
+#resultado {
+  margin: 30px auto 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0 2px 5px black;
+}
